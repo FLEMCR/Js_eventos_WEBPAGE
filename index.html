@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HangoutZ</title>
+  <link rel="icon" href="/src/assets/logo_amarillo.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/css/styles.css">
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+  <header>
+    <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-4 px-4 py-4">
+        <img src="src/assets/logo_principal.svg" alt="Logo de HangoutZ" class="h-11 w-auto">
+        <h1 class="text-[1.5rem] font-bold">HangoutZ</h1>
+      </a>
+      <button type="button" id="btnMisInscripciones"
+        class="mr-4 inline-flex items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--amarillo)] bg-[var(--amarillo)] p-2 text-[0.875rem] font-bold text-[var(--principal)] cursor-pointer transition-[background,transform,box-shadow,border-color] duration-200 ease-in hover: hover:border-[var(--amarillo_oscuro)] hover:bg-[var(--amarillo_oscuro)] hover:shadow-[0_0.5rem_1rem_var(--amarillo_sombra)] md:px-4 md:py-2">
+        <img src="src/assets/ticket.svg" alt="" class="w-5">
+        <span class="hidden md:inline">Mis inscripciones</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="mx-auto w-full max-w-6xl flex-1 px-4">
+
+    <section id="buscar"
+      class="bg-[var(--fondo2)] rounded-[1rem] p-8 shadow-[0_0.5rem_1.5rem_var(--sombra)] mt-8 mb-14">
+      <h2 class="mb-2 text-[1.5rem] font-bold">Buscar tu proximo evento</h2>
+      <p class="mb-6 text-[var(--principal_medio)]">Filtra por nombre, categoria o fecha</p>
+
+      <form id="formBusqueda" class="grid gap-4 md:grid-cols-[2fr_1fr_1fr_auto]" action="#" method="get">
+        <label for="busqueda"
+          class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Nombre
+          del evento
+          <input type="text" id="busqueda" name="busqueda" placeholder="Ej. Chayanne, Horrorland..." autocomplete="off"
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+        </label>
+        <label for="categoria"
+          class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Categoria
+          <select id="categoria" name="categoria"
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+            <option value="">Todas las categorias</option>
+            <option value="musica">Musica</option>
+            <option value="arte">Arte y cultura</option>
+            <option value="entretenimiento">Entretenimiento</option>
+            <option value="deportes">Deportes</option>
+          </select>
+        </label>
+        <label for="fecha" class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Desde
+          que fecha
+          <input type="date" id="fecha" name="fecha"
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+        </label>
+        <div class="flex items-end">
+          <button type="submit"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--amarillo)] bg-[var(--amarillo)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--principal)] cursor-pointer transition-[background,transform,box-shadow,border-color] duration-200 ease-in hover: hover:border-[var(--amarillo_oscuro)] hover:bg-[var(--amarillo_oscuro)] hover:shadow-[0_0.5rem_1rem_var(--amarillo_sombra)]">
+            <img src="src/assets/lupa.svg" alt="" class="w-5">
+            Buscar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section id="eventos" class="mb-16">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <h2 class="text-[1.5rem] font-bold">Proximos eventos</h2>
+        <p id="resultadoBusqueda" class="text-[0.875rem] font-semibold text-[var(--principal_medio)]">
+          <span id="contador">n</span> eventos programados
+        </p>
+      </div>
+
+      <div id="listaEventos" class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Horrorland" data-categoria="entretenimiento" data-fecha="2026-10-02">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/horror.jpg" alt="Imagen del evento Horrorland"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">ENTRETENIMIENTO</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">02</span>
+            <span class="text-[0.875rem] font-bold ">OCT</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Horrorland</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Dark Xperience</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Circuito Mágico del Agua
+            </p>
+            <button type="button" data-modal="modal_1"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Chayanne" data-categoria="musica" data-fecha="2026-12-02">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/chayanne.png" alt="Imagen del evento Chayanne"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">MUSICA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">02</span>
+            <span class="text-[0.875rem] font-bold ">DIC</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Chayanne</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Bailemos Otra Vez Tour</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Estadio Nacional
+            </p>
+            <button type="button" data-modal="modal_2"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Gorillaz" data-categoria="musica" data-fecha="2026-11-23">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/gorillaz.jpg" alt="Imagen del evento Gorillaz"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">MUSICA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">23</span>
+            <span class="text-[0.875rem] font-bold ">NOV</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Gorillaz</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">The Mountain Tour 2026</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Lurin Live
+            </p>
+            <button type="button" data-modal="modal_3"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Marco Antonio Solís" data-categoria="musica" data-fecha="2026-11-07">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/marco.jpg" alt="Imagen del evento Marco Antonio Solís"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">MUSICA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">07</span>
+            <span class="text-[0.875rem] font-bold ">NOV</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Marco Antonio Solís</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Gira Mas Cerca de Ti World Tour</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Arena 1, San Miguel
+            </p>
+            <button type="button" data-modal="modal_4"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Robbie Williams" data-categoria="musica" data-fecha="2026-12-12">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/robbie.png" alt="Imagen del evento Robbie Williams"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">MUSICA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">12</span>
+            <span class="text-[0.875rem] font-bold ">DIC</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Robbie Williams</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Britpop World Tour</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Estadio San Marcos
+            </p>
+            <button type="button" data-modal="modal_5"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Asesinato en el Expreso Oriente" data-categoria="arte" data-fecha="2026-09-10">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/asesinato.webp" alt="Imagen del evento Asesinato en el Expreso Oriente"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">ARTE
+              Y CULTURA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">10</span>
+            <span class="text-[0.875rem] font-bold ">SEP</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Asesinato en el Expreso Oriente</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Teatro</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Centro Cultural de la Universidad de Lima
+            </p>
+            <button type="button" data-modal="modal_6"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="En el principio solo existían agua y oscuridad" data-categoria="arte" data-fecha="2026-11-15">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/agua.webp" alt="Imagen del evento En el principio solo existían agua y oscuridad"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">ARTE
+              Y CULTURA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">15</span>
+            <span class="text-[0.875rem] font-bold ">NOV</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">En el principio solo existían agua y oscuridad
+            </h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Arte y cultura</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Centro Cultural de la Universidad de Lima
+            </p>
+            <button type="button" data-modal="modal_7"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Las aulas celestes" data-categoria="arte" data-fecha="2026-11-07">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/aulas.webp" alt="Imagen del evento Las aulas celestes"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">ARTE
+              Y CULTURA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">07</span>
+            <span class="text-[0.875rem] font-bold ">NOV</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Las aulas celestes</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Teatro</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Teatro de la Alianza Francesa de Lima
+            </p>
+            <button type="button" data-modal="modal_8"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Sporting Cristal vs Alianza Lima" data-categoria="deportes" data-fecha="2026-10-29">
+          <div class="relative overflow-hidden">
+            <img src="src/assets/sporting.webp" alt="Imagen del evento Sporting Cristal vs Alianza Lima"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">DEPORTES</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">29</span>
+            <span class="text-[0.875rem] font-bold ">OCT</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Sporting Cristal vs Alianza Lima</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Fútbol</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="src/assets/pin.svg" alt="" class="w-4">Estadio Alberto Gallardo
+            </p>
+            <button type="button" data-modal="modal_9"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="bg-[var(--principal)] text-white">
+    <div class="mx-auto w-full max-w-6xl px-4 py-12">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-4">
+
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <img src="src/assets/logo_amarillo.svg" alt="Logo de HangoutZ" class="h-11 w-auto">
+            <span class="text-[1.25rem] font-bold">HangoutZ</span>
+          </div>
+          <p class="text-[var(--footer_texto)] text-[0.875rem]">
+            Descubre, comparte y vive planes únicos en eventos que inspiran, conectan y dejan huella.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-[0.875rem] font-bold ">CONÓCENOS</h3>
+          <ul class="flex flex-col gap-3">
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Sobre
+                nosotros</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Preguntas
+                frecuentes</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Cómo
+                funciona HangoutZ</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Contacto</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-[0.875rem] font-bold ">LEGALES</h3>
+          <ul class="flex flex-col gap-3">
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Términos
+                y condiciones</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Políticas
+                de privacidad</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Políticas
+                de cookies</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Declaración
+                del Beneficiario final</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Cláusulas
+                de usos adicionales</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Reportar
+                Propiedad Intelectual</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-[0.875rem] font-bold ">INSPIRACIÓN</h3>
+          <ul class="flex flex-col gap-3">
+            <li><a href="https://www.joinnus.com/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Joinnus</a>
+            </li>
+            <li><a href="https://www.ticketmaster.pe/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">TicketMaster</a>
+            </li>
+            <li><a href="https://teleticket.com.pe/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Teleticket</a>
+            </li>
+            <li><a href="https://landonorris.com/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Lando
+                Norris</a></li>
+            <li><a href="https://www.paradigmfestival.com/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Paradigm
+                Festival</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="mt-12 flex flex-col items-center justify-between gap-6 border-t border-t-[var(--footer_borde)] pt-8 sm:flex-row">
+        <p class="text-[var(--footer_texto)] text-[0.875rem]">© 2026 HangoutZ. Todos los derechos
+          reservados.</p>
+        <a class="flex items-center gap-4" href="mailto:pt71878972@idat.pe">
+          <p class="text-[var(--footer_texto)] text-[0.875rem]">Creado por Luis.C</p>
+          <img src="src/assets/firma_clara.svg" alt="Firma de Luis.C, creador de HangoutZ"
+            class="h-9 w-auto opacity-90">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/js/inscripcion.js"></script>
+  <script src="src/js/utilidades.js"></script>
+  <script src="src/js/modales.js"></script>
+  <script src="src/js/busqueda.js"></script>
+</body>
+
+</html>

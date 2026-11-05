@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+:root {
+  --fondo: #f3efe0;
+  --fondo2: #fffdf3;
+  --principal: #1e1c18;
+  --principal_oscuro: #403a2b;
+  --principal_medio: #79715c;
+  --principal_borde: #e6dfc7;
+  --secundario: #8a6a00;
+  --secundario_suave: #fdf1b8;
+  --amarillo: #f7df1e;
+  --amarillo_oscuro: #dcc400;
+  --rojo: #b91c1c;
+  --rojo_borde: #fca5a5;
+  --rojo_fondo: #fee2e2;
+  --footer_texto: #d6d0bf;
+  --footer_borde: #ffffff26;
+  --sombra: #1e1c180f;
+  --amarillo_sombra: #f7df1e73;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--fondo);
+  color: var(--principal);
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
