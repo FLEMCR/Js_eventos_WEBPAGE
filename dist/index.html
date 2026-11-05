@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" crossorigin href="/assets/index-CmYo-WVf.css">
+  <script type="module" crossorigin src="/assets/index-YQwaXtyI.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-_G5gqJxw.css">
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -43,12 +44,12 @@
           class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Nombre
           del evento
           <input type="text" id="busqueda" name="busqueda" placeholder="Ej. Chayanne, Horrorland..." autocomplete="off"
-            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)] border-1 border-[var(--principal_borde)]">
         </label>
         <label for="categoria"
           class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Categoria
           <select id="categoria" name="categoria"
-            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)] border-1 border-[var(--principal_borde)]">
             <option value="">Todas las categorias</option>
             <option value="musica">Musica</option>
             <option value="arte">Arte y cultura</option>
@@ -59,7 +60,7 @@
         <label for="fecha" class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Desde
           que fecha
           <input type="date" id="fecha" name="fecha"
-            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)] border-1 border-[var(--principal_borde)]">
         </label>
         <div class="flex items-end">
           <button type="submit"
@@ -415,10 +416,7 @@
     </div>
   </footer>
 
-  <script src="src/js/inscripcion.js"></script>
-  <script src="src/js/utilidades.js"></script>
-  <script src="src/js/modales.js"></script>
-  <script src="src/js/busqueda.js"></script>
+  <!-- Acá tuve que ponerle type="module" porque si no al usar build no me cargaba el js-->
 </body>
 
 </html>

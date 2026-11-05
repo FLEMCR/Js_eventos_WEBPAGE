@@ -1,3 +1,7 @@
+import cerrar from '../assets/cerrar.svg';
+import ticket from '../assets/ticket.svg';
+// Estos 2 imports de arriba tuve que agregarlos porque si no al usar build no me identificaba los svg y en el codigo de aquí tambien cambie su src para que llame a estos imports de aquí
+
 const eventosModal = {
   modal_1: {
     titulo: 'Horrorland',
@@ -161,7 +165,7 @@ function plantillaDetalle(evento) {
           </div>
           <button type="button" data-cerrar
             class="grid h-10 w-10 shrink-0 place-items-center rounded-[0.75rem] border-0 bg-[var(--secundario_suave)] cursor-pointer transition-[background] duration-200 ease-in hover:bg-[var(--principal_borde)]">
-            <img src="src/assets/cerrar.svg" alt="" class="h-5 w-5">
+            <img src="${cerrar}" alt="" class="h-5 w-5">
           </button>
         </div>
 
@@ -178,11 +182,11 @@ function plantillaDetalle(evento) {
               <span><strong class="font-bold">Lugar:</strong> ${evento.lugar}</span>
             </li>
             <li class="flex items-center gap-2">
-              <img src="src/assets/ticket.svg" alt="" class="w-4 shrink-0">
+              <img src="${ticket}" alt="" class="w-4 shrink-0">
               <span><strong class="font-bold">Precio:</strong> ${precio}</span>
             </li>
             <li class="flex items-center gap-2">
-              <img src="src/assets/ticket.svg" alt="" class="w-4 shrink-0">
+              <img src="${ticket}" alt="" class="w-4 shrink-0">
               <span>Entradas en
                 <a href="${evento.link}" target="_blank" rel="noopener"
                   class="font-semibold text-[var(--secundario)] underline underline-offset-[0.1875rem] transition-[color] duration-200 ease-in hover:text-[var(--principal)]">${evento.plataforma}</a>
@@ -194,7 +198,7 @@ function plantillaDetalle(evento) {
           <div class="mt-6">
             <button type="button" data-inscribir
               class="mr-4 inline-flex items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--amarillo)] bg-[var(--amarillo)] p-2 text-[0.875rem] font-bold text-[var(--principal)] cursor-pointer transition-[background,transform,box-shadow,border-color] duration-200 ease-in hover: hover:border-[var(--amarillo_oscuro)] hover:bg-[var(--amarillo_oscuro)] hover:shadow-[0_0.5rem_1rem_var(--amarillo_sombra)] md:px-4 md:py-2">
-              <img src="src/assets/ticket.svg" alt="" class="w-5 h-5">
+              <img src="${ticket}" alt="" class="w-5 h-5">
               Inscribirse
             </button>
           </div>
