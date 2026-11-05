@@ -1,44 +1,3 @@
-class EventoBase {
-  precio;
-
-  constructor(datos) {
-    const { precio, ...resto } = datos;
-    Object.assign(this, resto);
-    this.precio = precio;
-  }
-
-  get precio() {
-    return this.precio;
-  }
-
-  set precio(valor) {
-    const numero = Number(valor);
-    this.precio = numero < 0 ? 0 : numero;
-  }
-
-  get tipo() {
-    return 'ENTRETENIMIENTO';
-  }
-}
-
-class EventoMusical extends EventoBase {
-  get tipo() {
-    return 'MUSICA';
-  }
-}
-
-class EventoTeatro extends EventoBase {
-  get tipo() {
-    return 'ARTE Y CULTURA';
-  }
-}
-
-class EventoDeportivo extends EventoBase {
-  get tipo() {
-    return 'DEPORTES';
-  }
-}
-
 const eventosModal = {
   modal_1: {
     titulo: 'Horrorland',
@@ -167,10 +126,6 @@ function manejarClic(evento) {
     modal.close();
   }
 
-  if (evento.target.closest('[data-volver]')) {
-    abrirDetalle(eventoActual);
-  }
-
   if (!evento.target.closest('[data-tarjeta]')) {
     modal.close();
   }
@@ -180,15 +135,7 @@ function abrirDetalle(id) {
   const evento = eventosModal[id];
 
   eventoActual = id;
-  modal.innerHTML = plantillaDetalle(evento, id);
-  mostrar();
-}
-
-function abrirFormulario(id) {
-  const evento = eventosModal[id];
-
-  eventoActual = id;
-  modal.innerHTML = plantillaFormulario(evento, id);
+  modal.innerHTML = plantillaDetalle(evento);
   mostrar();
 }
 
@@ -199,7 +146,7 @@ function mostrar() {
   modal.scrollTop = 0;
 }
 
-function plantillaDetalle(evento, id) {
+function plantillaDetalle(evento) {
   const precio = evento.precio > 0 ? formatearSoles(evento.precio) : 'Entrada libre';
 
   return `
@@ -209,8 +156,8 @@ function plantillaDetalle(evento, id) {
 
         <div class="flex items-start justify-between gap-4 border-b border-[var(--principal_borde)] pb-4">
           <div>
-            <p class="text-[0.75rem] leading-[1rem] font-bold uppercase tracking-widest text-[var(--principal)]">${evento.tipo}</p>
-            <h3 class="text-[1.5rem] leading-[2rem] font-bold text-[var(--secundario)]">${evento.titulo}</h3>
+            <p class="text-[0.75rem] font-bold uppercase text-[var(--principal)]">${evento.categoria}</p>
+            <h3 class="text-[1.5rem] font-bold text-[var(--secundario)]">${evento.titulo}</h3>
           </div>
           <button type="button" data-cerrar
             class="grid h-10 w-10 shrink-0 place-items-center rounded-[0.75rem] border-0 bg-[var(--secundario_suave)] cursor-pointer transition-[background] duration-200 ease-in hover:bg-[var(--principal_borde)]">
@@ -239,70 +186,19 @@ function plantillaDetalle(evento, id) {
               <span>Entradas en
                 <a href="${evento.link}" target="_blank" rel="noopener"
                   class="font-semibold text-[var(--secundario)] underline underline-offset-[0.1875rem] transition-[color] duration-200 ease-in hover:text-[var(--principal)]">${evento.plataforma}</a>
-              </span>
+                </span>
+              </li>
             </li>
           </ul>
 
           <div class="mt-6">
-            <button type="button" data-volver
-              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] leading-[1.5rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
-              Volver
+            <button type="button" data-inscribir
+              class="mr-4 inline-flex items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--amarillo)] bg-[var(--amarillo)] p-2 text-[0.875rem] font-bold text-[var(--principal)] cursor-pointer transition-[background,transform,box-shadow,border-color] duration-200 ease-in hover: hover:border-[var(--amarillo_oscuro)] hover:bg-[var(--amarillo_oscuro)] hover:shadow-[0_0.5rem_1rem_var(--amarillo_sombra)] md:px-4 md:py-2">
+              <img src="src/assets/ticket.svg" alt="" class="w-5 h-5">
+              Inscribirse
             </button>
           </div>
         </div>
-      </div>
-    </div>`;
-}
-
-function plantillaFormulario(evento, id) {
-  return `
-    <div class="flex min-h-full justify-center">
-      <form data-formulario data-tarjeta
-        class="my-auto w-full max-w-2xl rounded-[1.25rem] border border-[var(--principal_borde)] bg-[var(--fondo2)] p-6 shadow-[0_1.5625rem_3.125rem_-0.75rem_var(--sombra)]">
-
-        <div class="flex items-start justify-between gap-4 border-b border-[var(--principal_borde)] pb-4">
-          <div>
-            <p class="text-[0.75rem] leading-[1rem] font-bold uppercase tracking-widest text-[var(--principal)]">INSCRIPCION</p>
-            <h3 class="text-[1.5rem] leading-[2rem] font-bold text-[var(--secundario)]">${evento.titulo}</h3>
-          </div>
-          <button type="button" data-cerrar
-            class="grid h-10 w-10 shrink-0 place-items-center rounded-[0.75rem] border-0 bg-[var(--secundario_suave)] cursor-pointer transition-[background] duration-200 ease-in hover:bg-[var(--principal_borde)]">
-            <img src="src/assets/cerrar.svg" alt="" class="h-5 w-5">
-          </button>
-        </div>
-
-        <div class="flex flex-col gap-4 pt-5">
-          <p class="text-[0.875rem] leading-[1.25rem] text-[var(--principal_medio)]">${evento.fecha} · ${evento.lugar}</p>
-
-          <label class="flex flex-col gap-1.5 text-[0.875rem] leading-[1.25rem] font-bold text-[var(--principal_oscuro)]">
-            Nombre del titular
-            <input type="text" name="titular" required maxlength="80" autocomplete="off" placeholder="Ej. Hector Campos"
-              class="w-full rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)] transition-[border-color,box-shadow] duration-200 ease-in placeholder:font-medium placeholder:text-[var(--principal_medio)] focus:border-[var(--secundario)] focus:shadow-[0_0_0_0.25rem_var(--amarillo_sombra)] focus:outline-none">
-          </label>
-
-          <label class="flex flex-col gap-1.5 text-[0.875rem] leading-[1.25rem] font-bold text-[var(--principal_oscuro)]">
-            Cantidad de entradas
-            <input type="number" name="cantidad" min="1" max="10" value="1" required
-              class="w-full rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)] transition-[border-color,box-shadow] duration-200 ease-in placeholder:font-medium placeholder:text-[var(--principal_medio)] focus:border-[var(--secundario)] focus:shadow-[0_0_0_0.25rem_var(--amarillo_sombra)] focus:outline-none">
-          </label>
-
-          <div class="rounded-[0.75rem] bg-[var(--secundario_suave)] p-4 text-[0.875rem] leading-[1.25rem]">
-            <p>Precio por entrada: <strong class="font-bold">${formatearSoles(evento.precio)}</strong></p>
-            <p>Total: <strong class="font-bold" data-total>${formatearSoles(evento.precio)}</strong></p>
-            <p class="mt-1 text-[0.75rem] leading-[1rem] text-[var(--principal_medio)]">El precio incluye IGV (18%).</p>
-          </div>
-
-          <div class="flex flex-col gap-3 sm:flex-row">
-            <button type="button" data-volver
-              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] leading-[1.5rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
-              Volver
-            </button>
-            <button type="submit"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--amarillo)] bg-[var(--amarillo)] px-6 py-3 font-[inherit] text-[1rem] leading-[1.5rem] font-bold text-[var(--principal)] cursor-pointer transition-[background,transform,box-shadow,border-color] duration-200 ease-in hover: hover:border-[var(--amarillo_oscuro)] hover:bg-[var(--amarillo_oscuro)] hover:shadow-[0_0.5rem_1rem_var(--amarillo_sombra)]">
-              Aceptar
-            </button>
-          </div>
-        </form>
       </div>
     </div>`;
 }

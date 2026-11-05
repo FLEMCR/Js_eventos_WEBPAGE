@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       tarjeta.classList.toggle('hidden', !visible);
 
       if (visible) {
-        disponibles = +1;
+        disponibles++;
       }
     });
 

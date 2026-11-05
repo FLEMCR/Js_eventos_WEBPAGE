@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HangoutZ</title>
+  <link rel="icon" href="/assets/logo_amarillo-DxkI-TKB.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" crossorigin href="/assets/index-CmYo-WVf.css">
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+  <header>
+    <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-4 px-4 py-4">
+        <img src="data:image/svg+xml,%3csvg%20width='250'%20height='250'%20viewBox='0%200%20250%20250'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cuse%20xlink:href='%23stroke0_0_1'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cmask%20id='stroke1_0_1'%20fill='%231e1c18'%3e%3cuse%20xlink:href='%23stroke0_0_1'/%3e%3c/mask%3e%3cpath%20d='M231%20126C231%20185.094%20183.542%20233%20125%20233C66.4578%20233%2019%20185.094%2019%20126C19%2066.9055%2066.4578%2019%20125%2019C183.542%2019%20231%2066.9055%20231%20126ZM250%20125C250%20194.036%20194.036%20250%20125%20250C55.9644%20250%200%20194.036%200%20125C0%2055.9644%2055.9644%200%20125%200C194.036%200%20250%2055.9644%20250%20125Z'%20stroke-width='2'%20stroke='%231e1c18'%20mask='url(%23stroke1_0_1)'/%3e%3cpath%20d='M160.101%20115.562L161%20116L124.487%20191L124%20192L123.101%20191.562L160.101%20115.562Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M187.099%2097.5665L188%2097.9997L151%20175L150.099%20174.567L150.371%20174L186.891%2098L187.099%2097.5665Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M133%2058V59H132L115%2059H114V58L133%2058Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M133%20153V154H114V153H115H132H133Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M79%20153V154H60L60%20153H61H78H79Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M188.5%20191V192H123V191H124.487H188.5ZM188.5%20174V175H150V174H150.371H188.5ZM61%2058V59V153V153.5H60V58H61ZM188.5%2097V98H186.891H133V97H188.5Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M161%20115L161%20116L132%20116V115H161Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M115%20114V115H79V114H115Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M115%2097V98H79V97H115Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M78%2058H79V98H78V59V58Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M79%2058L79%2059H78L61%2059H60L60%2058H79Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M78%20114H79L79%20154H78V153V114Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M114%20114H115V153V154H114V114Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M114%2058H115V59V98H114V58Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M132%20115H133V154H132V153V115Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M132%2058L133%2058V98H132V59V58Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M188.5%20191V175H151H150V174H150.371L186.891%2098H133H132V59L115%2059V97V98H114H79H78V59L61%2059V153H78V114H79H114H115V115V153H132V116V115H133H161L161%20116L124.487%20191H188.5Z'%20fill='%231e1c18'%20fill-opacity='1'/%3e%3cpath%20d='M150.371%20174H188.5V192M188.5%20174V175M124.487%20191H123V192H188.5V191M161%20116L160.101%20115.562L123.101%20191.562L124%20192L124.487%20191M124.487%20191L161%20116L161%20115H133M161%20116L132%20116M151%20175L188%2097.9997L187.099%2097.5665L186.891%2098M151%20175L150.099%20174.567L150.371%20174M151%20175H188.5M150.371%20174H150V175H151M114%2098V58L133%2058V59H132M133%2058L132%2058V59M133%2058V98M114%2058V59H115M114%2058H115V59M133%20154V153H132M133%20115V154H114M133%20154H132V153M115%20153V154H114V153H115ZM114%20154V114M79%20154V153H78M79%20114L79%20154H60L60%20153H61M79%20154H78V153M188.5%20191V175M188.5%20191H124.487M188.5%20175H150M61%2059V58H60V153.5H61V153M60%2058L60%2059H61M79%2098V58H60M133%2098V97H188.5V98H186.891M133%2098H132V59M133%2098H186.891M132%20153V115H161M132%20116V115M132%20116V153M132%20115H133M114%20114H115V115M115%20114H79M115%20114V153M115%20115H79V114M115%20115V153M79%20114H78V153M79%20114H114M115%2097V98M115%2097H79V98M115%2097V59M115%2059V98H79M115%2098H114M79%2098H78V59M79%2098H114M79%2058H78V59M79%2058L79%2059H78M150.371%20174L186.891%2098M132%2059L115%2059M78%2059L61%2059M61%2059V153M61%20153H78M115%20153H132'%20stroke='%231e1c18'/%3e%3cdefs%3e%3cpath%20id='stroke0_0_1'%20d='M250%20125C250%20194.036%20194.036%20250%20125%20250C55.9644%20250%200%20194.036%200%20125C0%2055.9644%2055.9644%200%20125%200C194.036%200%20250%2055.9644%20250%20125ZM125%20233C183.542%20233%20231%20185.094%20231%20126C231%2066.9055%20183.542%2019%20125%2019C66.4578%2019%2019%2066.9055%2019%20126C19%20185.094%2066.4578%20233%20125%20233Z'%20fill-rule='evenodd'%20clip-rule='evenodd'/%3e%3c/defs%3e%3c/svg%3e" alt="Logo de HangoutZ" class="h-11 w-auto">
+        <h1 class="text-[1.5rem] font-bold">HangoutZ</h1>
+      </a>
+      <button type="button" id="btnMisInscripciones"
+        class="mr-4 inline-flex items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--amarillo)] bg-[var(--amarillo)] p-2 text-[0.875rem] font-bold text-[var(--principal)] cursor-pointer transition-[background,transform,box-shadow,border-color] duration-200 ease-in hover: hover:border-[var(--amarillo_oscuro)] hover:bg-[var(--amarillo_oscuro)] hover:shadow-[0_0.5rem_1rem_var(--amarillo_sombra)] md:px-4 md:py-2">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M3%209V7a2%202%200%200%201%202-2h14a2%202%200%200%201%202%202v2a3%203%200%200%200%200%206v2a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2v-2a3%203%200%200%200%200-6z'/%3e%3cline%20x1='13'%20y1='5'%20x2='13'%20y2='19'/%3e%3c/svg%3e" alt="" class="w-5">
+        <span class="hidden md:inline">Mis inscripciones</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="mx-auto w-full max-w-6xl flex-1 px-4">
+
+    <section id="buscar"
+      class="bg-[var(--fondo2)] rounded-[1rem] p-8 shadow-[0_0.5rem_1.5rem_var(--sombra)] mt-8 mb-14">
+      <h2 class="mb-2 text-[1.5rem] font-bold">Buscar tu proximo evento</h2>
+      <p class="mb-6 text-[var(--principal_medio)]">Filtra por nombre, categoria o fecha</p>
+
+      <form id="formBusqueda" class="grid gap-4 md:grid-cols-[2fr_1fr_1fr_auto]" action="#" method="get">
+        <label for="busqueda"
+          class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Nombre
+          del evento
+          <input type="text" id="busqueda" name="busqueda" placeholder="Ej. Chayanne, Horrorland..." autocomplete="off"
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+        </label>
+        <label for="categoria"
+          class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Categoria
+          <select id="categoria" name="categoria"
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+            <option value="">Todas las categorias</option>
+            <option value="musica">Musica</option>
+            <option value="arte">Arte y cultura</option>
+            <option value="entretenimiento">Entretenimiento</option>
+            <option value="deportes">Deportes</option>
+          </select>
+        </label>
+        <label for="fecha" class="flex flex-col gap-1.5 text-[0.875rem] font-bold text-[var(--principal_oscuro)]">Desde
+          que fecha
+          <input type="date" id="fecha" name="fecha"
+            class="w-full rounded-[0.75rem] px-4 py-3 font-[inherit] font-semibold text-[var(--principal)]">
+        </label>
+        <div class="flex items-end">
+          <button type="submit"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--amarillo)] bg-[var(--amarillo)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--principal)] cursor-pointer transition-[background,transform,box-shadow,border-color] duration-200 ease-in hover: hover:border-[var(--amarillo_oscuro)] hover:bg-[var(--amarillo_oscuro)] hover:shadow-[0_0.5rem_1rem_var(--amarillo_sombra)]">
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='11'%20cy='11'%20r='7'/%3e%3cline%20x1='16.5'%20y1='16.5'%20x2='21'%20y2='21'/%3e%3c/svg%3e" alt="" class="w-5">
+            Buscar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section id="eventos" class="mb-16">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <h2 class="text-[1.5rem] font-bold">Proximos eventos</h2>
+        <p id="resultadoBusqueda" class="text-[0.875rem] font-semibold text-[var(--principal_medio)]">
+          <span id="contador">n</span> eventos programados
+        </p>
+      </div>
+
+      <div id="listaEventos" class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Horrorland" data-categoria="entretenimiento" data-fecha="2026-10-02">
+          <div class="relative overflow-hidden">
+            <img src="/assets/horror-DGer3Rmn.jpg" alt="Imagen del evento Horrorland"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">ENTRETENIMIENTO</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">02</span>
+            <span class="text-[0.875rem] font-bold ">OCT</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Horrorland</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Dark Xperience</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Circuito Mágico del Agua
+            </p>
+            <button type="button" data-modal="modal_1"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Chayanne" data-categoria="musica" data-fecha="2026-12-02">
+          <div class="relative overflow-hidden">
+            <img src="/assets/chayanne-BpCCgQPs.png" alt="Imagen del evento Chayanne"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">MUSICA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">02</span>
+            <span class="text-[0.875rem] font-bold ">DIC</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Chayanne</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Bailemos Otra Vez Tour</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Estadio Nacional
+            </p>
+            <button type="button" data-modal="modal_2"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Gorillaz" data-categoria="musica" data-fecha="2026-11-23">
+          <div class="relative overflow-hidden">
+            <img src="/assets/gorillaz-DDH1rg6o.jpg" alt="Imagen del evento Gorillaz"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">MUSICA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">23</span>
+            <span class="text-[0.875rem] font-bold ">NOV</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Gorillaz</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">The Mountain Tour 2026</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Lurin Live
+            </p>
+            <button type="button" data-modal="modal_3"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Marco Antonio Solís" data-categoria="musica" data-fecha="2026-11-07">
+          <div class="relative overflow-hidden">
+            <img src="/assets/marco-BTc-rAW9.jpg" alt="Imagen del evento Marco Antonio Solís"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">MUSICA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">07</span>
+            <span class="text-[0.875rem] font-bold ">NOV</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Marco Antonio Solís</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Gira Mas Cerca de Ti World Tour</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Arena 1, San Miguel
+            </p>
+            <button type="button" data-modal="modal_4"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Robbie Williams" data-categoria="musica" data-fecha="2026-12-12">
+          <div class="relative overflow-hidden">
+            <img src="/assets/robbie-Dt8pEkmE.png" alt="Imagen del evento Robbie Williams"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">MUSICA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">12</span>
+            <span class="text-[0.875rem] font-bold ">DIC</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Robbie Williams</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Britpop World Tour</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Estadio San Marcos
+            </p>
+            <button type="button" data-modal="modal_5"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Asesinato en el Expreso Oriente" data-categoria="arte" data-fecha="2026-09-10">
+          <div class="relative overflow-hidden">
+            <img src="/assets/asesinato-CfGigrxQ.webp" alt="Imagen del evento Asesinato en el Expreso Oriente"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">ARTE
+              Y CULTURA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">10</span>
+            <span class="text-[0.875rem] font-bold ">SEP</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Asesinato en el Expreso Oriente</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Teatro</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Centro Cultural de la Universidad de Lima
+            </p>
+            <button type="button" data-modal="modal_6"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="En el principio solo existían agua y oscuridad" data-categoria="arte" data-fecha="2026-11-15">
+          <div class="relative overflow-hidden">
+            <img src="/assets/agua-DemoXp6-.webp" alt="Imagen del evento En el principio solo existían agua y oscuridad"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">ARTE
+              Y CULTURA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">15</span>
+            <span class="text-[0.875rem] font-bold ">NOV</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">En el principio solo existían agua y oscuridad
+            </h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Arte y cultura</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Centro Cultural de la Universidad de Lima
+            </p>
+            <button type="button" data-modal="modal_7"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Las aulas celestes" data-categoria="arte" data-fecha="2026-11-07">
+          <div class="relative overflow-hidden">
+            <img src="/assets/aulas-CooZyMg0.webp" alt="Imagen del evento Las aulas celestes"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">ARTE
+              Y CULTURA</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">07</span>
+            <span class="text-[0.875rem] font-bold ">NOV</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Las aulas celestes</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Teatro</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Teatro de la Alianza Francesa de Lima
+            </p>
+            <button type="button" data-modal="modal_8"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="lecr_tarjeta flex flex-col bg-[var(--fondo2)] border border-[var(--principal_borde)] rounded-[1rem] overflow-hidden shadow-[0_0.25rem_0.75rem_var(--sombra)] transition-[transform,box-shadow] duration-200 ease-in hover: hover:shadow-[0_1rem_2rem_var(--sombra)]"
+          data-titulo="Sporting Cristal vs Alianza Lima" data-categoria="deportes" data-fecha="2026-10-29">
+          <div class="relative overflow-hidden">
+            <img src="/assets/sporting-CUOPqUgP.webp" alt="Imagen del evento Sporting Cristal vs Alianza Lima"
+              class="block w-full h-45 object-cover hover:scale-[1.18] transition-[scale] duration-200 ease-in">
+            <span
+              class="absolute top-3.5 left-3.5 bg-[var(--fondo2)] text-[var(--principal)] text-[0.75rem] font-bold  rounded-full px-3 py-1 shadow-[0_0.125rem_0.5rem_var(--sombra)]">DEPORTES</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-[var(--amarillo)] text-[var(--principal)] px-4 py-1">
+            <span class="text-[1.5rem] font-bold">29</span>
+            <span class="text-[0.875rem] font-bold ">OCT</span>
+          </div>
+          <div class="p-5">
+            <h3 class="mb-1 text-[1.25rem] font-bold">Sporting Cristal vs Alianza Lima</h3>
+            <p class="mb-4 font-semibold text-[var(--secundario)]">Fútbol</p>
+            <p class="mb-5 flex items-center gap-2 text-[0.875rem] text-[var(--principal_medio)]">
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2010c0%207-9%2013-9%2013s-9-6-9-13a9%209%200%200%201%2018%200z'/%3e%3ccircle%20cx='12'%20cy='10'%20r='3'/%3e%3c/svg%3e" alt="" class="w-4">Estadio Alberto Gallardo
+            </p>
+            <button type="button" data-modal="modal_9"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] border-2 border-[var(--principal_borde)] bg-[var(--fondo2)] px-6 py-3 font-[inherit] text-[1rem] font-bold text-[var(--secundario)] cursor-pointer transition-[background,border-color] duration-200 ease-in hover:border-[var(--secundario)] hover:bg-[var(--secundario_suave)]">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="bg-[var(--principal)] text-white">
+    <div class="mx-auto w-full max-w-6xl px-4 py-12">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-4">
+
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <img src="data:image/svg+xml,%3csvg%20width='250'%20height='250'%20viewBox='0%200%20250%20250'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cuse%20xlink:href='%23stroke0_0_1'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cmask%20id='stroke1_0_1'%20fill='white'%3e%3cuse%20xlink:href='%23stroke0_0_1'/%3e%3c/mask%3e%3cpath%20d='M231%20126C231%20185.094%20183.542%20233%20125%20233C66.4578%20233%2019%20185.094%2019%20126C19%2066.9055%2066.4578%2019%20125%2019C183.542%2019%20231%2066.9055%20231%20126ZM250%20125C250%20194.036%20194.036%20250%20125%20250C55.9644%20250%200%20194.036%200%20125C0%2055.9644%2055.9644%200%20125%200C194.036%200%20250%2055.9644%20250%20125Z'%20stroke-width='2'%20stroke='%23f7df1e'%20mask='url(%23stroke1_0_1)'/%3e%3cpath%20d='M160.101%20115.562L161%20116L124.487%20191L124%20192L123.101%20191.562L160.101%20115.562Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M187.099%2097.5665L188%2097.9997L151%20175L150.099%20174.567L150.371%20174L186.891%2098L187.099%2097.5665Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M133%2058V59H132L115%2059H114V58L133%2058Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M133%20153V154H114V153H115H132H133Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M79%20153V154H60L60%20153H61H78H79Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M188.5%20191V192H123V191H124.487H188.5ZM188.5%20174V175H150V174H150.371H188.5ZM61%2058V59V153V153.5H60V58H61ZM188.5%2097V98H186.891H133V97H188.5Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M161%20115L161%20116L132%20116V115H161Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M115%20114V115H79V114H115Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M115%2097V98H79V97H115Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M78%2058H79V98H78V59V58Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M79%2058L79%2059H78L61%2059H60L60%2058H79Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M78%20114H79L79%20154H78V153V114Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M114%20114H115V153V154H114V114Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M114%2058H115V59V98H114V58Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M132%20115H133V154H132V153V115Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M132%2058L133%2058V98H132V59V58Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M188.5%20191V175H151H150V174H150.371L186.891%2098H133H132V59L115%2059V97V98H114H79H78V59L61%2059V153H78V114H79H114H115V115V153H132V116V115H133H161L161%20116L124.487%20191H188.5Z'%20fill='%23f7df1e'%20fill-opacity='1'/%3e%3cpath%20d='M150.371%20174H188.5V192M188.5%20174V175M124.487%20191H123V192H188.5V191M161%20116L160.101%20115.562L123.101%20191.562L124%20192L124.487%20191M124.487%20191L161%20116L161%20115H133M161%20116L132%20116M151%20175L188%2097.9997L187.099%2097.5665L186.891%2098M151%20175L150.099%20174.567L150.371%20174M151%20175H188.5M150.371%20174H150V175H151M114%2098V58L133%2058V59H132M133%2058L132%2058V59M133%2058V98M114%2058V59H115M114%2058H115V59M133%20154V153H132M133%20115V154H114M133%20154H132V153M115%20153V154H114V153H115ZM114%20154V114M79%20154V153H78M79%20114L79%20154H60L60%20153H61M79%20154H78V153M188.5%20191V175M188.5%20191H124.487M188.5%20175H150M61%2059V58H60V153.5H61V153M60%2058L60%2059H61M79%2098V58H60M133%2098V97H188.5V98H186.891M133%2098H132V59M133%2098H186.891M132%20153V115H161M132%20116V115M132%20116V153M132%20115H133M114%20114H115V115M115%20114H79M115%20114V153M115%20115H79V114M115%20115V153M79%20114H78V153M79%20114H114M115%2097V98M115%2097H79V98M115%2097V59M115%2059V98H79M115%2098H114M79%2098H78V59M79%2098H114M79%2058H78V59M79%2058L79%2059H78M150.371%20174L186.891%2098M132%2059L115%2059M78%2059L61%2059M61%2059V153M61%20153H78M115%20153H132'%20stroke='%23f7df1e'/%3e%3cdefs%3e%3cpath%20id='stroke0_0_1'%20d='M250%20125C250%20194.036%20194.036%20250%20125%20250C55.9644%20250%200%20194.036%200%20125C0%2055.9644%2055.9644%200%20125%200C194.036%200%20250%2055.9644%20250%20125ZM125%20233C183.542%20233%20231%20185.094%20231%20126C231%2066.9055%20183.542%2019%20125%2019C66.4578%2019%2019%2066.9055%2019%20126C19%20185.094%2066.4578%20233%20125%20233Z'%20fill-rule='evenodd'%20clip-rule='evenodd'/%3e%3c/defs%3e%3c/svg%3e" alt="Logo de HangoutZ" class="h-11 w-auto">
+            <span class="text-[1.25rem] font-bold">HangoutZ</span>
+          </div>
+          <p class="text-[var(--footer_texto)] text-[0.875rem]">
+            Descubre, comparte y vive planes únicos en eventos que inspiran, conectan y dejan huella.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-[0.875rem] font-bold ">CONÓCENOS</h3>
+          <ul class="flex flex-col gap-3">
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Sobre
+                nosotros</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Preguntas
+                frecuentes</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Cómo
+                funciona HangoutZ</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Contacto</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-[0.875rem] font-bold ">LEGALES</h3>
+          <ul class="flex flex-col gap-3">
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Términos
+                y condiciones</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Políticas
+                de privacidad</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Políticas
+                de cookies</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Declaración
+                del Beneficiario final</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Cláusulas
+                de usos adicionales</a></li>
+            <li><a href="#"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Reportar
+                Propiedad Intelectual</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-[0.875rem] font-bold ">INSPIRACIÓN</h3>
+          <ul class="flex flex-col gap-3">
+            <li><a href="https://www.joinnus.com/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Joinnus</a>
+            </li>
+            <li><a href="https://www.ticketmaster.pe/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">TicketMaster</a>
+            </li>
+            <li><a href="https://teleticket.com.pe/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Teleticket</a>
+            </li>
+            <li><a href="https://landonorris.com/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Lando
+                Norris</a></li>
+            <li><a href="https://www.paradigmfestival.com/" target="_blank" rel="noopener"
+                class="text-[var(--footer_texto)] text-[1rem] transition-[color] duration-200 ease-in hover:text-white">Paradigm
+                Festival</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="mt-12 flex flex-col items-center justify-between gap-6 border-t border-t-[var(--footer_borde)] pt-8 sm:flex-row">
+        <p class="text-[var(--footer_texto)] text-[0.875rem]">© 2026 HangoutZ. Todos los derechos
+          reservados.</p>
+        <a class="flex items-center gap-4" href="mailto:pt71878972@idat.pe">
+          <p class="text-[var(--footer_texto)] text-[0.875rem]">Creado por Luis.C</p>
+          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='123%20175%20253%20150'%3e%3cpath%20d='M152.4,323.4%20L153.2,322.6%20L156.9,318.1%20L163.4,309.8%20L172.6,297.7%20L184.7,281.8%20L194.7,269.9%20L202.5,261.9%20L208.2,257.8%20L211.8,257.7%20L215.1,256.8%20L218.2,255.2%20L221.0,252.8%20L223.6,249.7%20L226.5,247.5%20L229.7,246.1%20L233.1,245.6%20L236.9,246.0%20L237.4,247.9%20L234.7,251.4%20L228.8,256.4%20L219.6,263.1%20L212.6,268.2%20L207.8,272.0%20L205.3,274.3%20L204.9,275.2%20L204.8,276.0%20L205.0,276.9%20L205.4,277.7%20L206.0,278.5%20L207.6,278.9%20L210.0,278.8%20L213.4,278.3%20L217.6,277.4%20L221.3,276.6%20L224.5,276.1%20L227.2,275.7%20L229.3,275.5%20L239.7,275.3%20L258.2,275.2%20L285.0,275.1%20L320.0,275.2%20L346.4,275.1%20L364.3,274.9%20L373.6,274.7%20L374.4,274.4%20L375.0,274.0%20L375.5,273.5%20L375.8,272.8%20L376.1,272.1%20L376.2,271.4%20L376.2,270.8%20L376.1,270.2%20L375.8,269.8%20L375.4,269.3%20L375.0,268.9%20L374.3,268.6%20L373.6,268.3%20L363.9,268.1%20L345.3,268.0%20L317.8,268.0%20L281.2,268.0%20L255.5,266.8%20L240.5,264.4%20L236.2,260.8%20L242.7,255.9%20L248.1,251.8%20L252.2,248.6%20L255.2,246.2%20L257.0,244.8%20L258.4,243.5%20L259.5,242.4%20L260.2,241.6%20L260.6,240.9%20L260.9,240.3%20L261.0,239.6%20L260.9,238.9%20L260.8,238.1%20L260.5,237.5%20L260.1,236.9%20L259.6,236.5%20L259.0,236.1%20L258.0,235.9%20L256.8,236.0%20L255.2,236.3%20L253.3,236.8%20L251.2,237.2%20L248.8,237.6%20L246.2,237.8%20L243.3,238.0%20L240.2,238.1%20L237.0,238.0%20L233.6,237.7%20L229.9,237.3%20L226.7,237.7%20L223.7,238.9%20L221.1,240.8%20L218.9,243.6%20L217.1,245.7%20L215.8,247.2%20L214.9,248.0%20L214.6,248.2%20L214.1,248.3%20L213.5,248.4%20L212.8,248.3%20L211.9,248.2%20L214.4,244.0%20L220.3,235.8%20L229.4,223.4%20L241.9,207.1%20L251.3,194.6%20L257.6,186.1%20L261.0,181.6%20L261.2,180.9%20L261.4,180.3%20L261.4,179.6%20L261.3,178.9%20L261.1,178.1%20L260.8,177.4%20L260.4,176.8%20L259.9,176.2%20L259.3,175.8%20L258.7,175.4%20L258.1,175.1%20L257.5,175.0%20L256.9,174.9%20L256.3,175.0%20L255.6,175.3%20L254.9,175.7%20L254.1,176.2%20L250.2,181.1%20L243.0,190.3%20L232.6,203.8%20L218.9,221.6%20L207.3,235.0%20L197.6,243.8%20L190.0,248.2%20L184.3,248.1%20L182.2,245.3%20L183.5,239.9%20L188.4,231.7%20L196.9,220.8%20L203.2,212.3%20L207.4,206.3%20L209.5,202.6%20L209.5,201.4%20L209.3,200.3%20L208.8,199.4%20L208.0,198.7%20L207.0,198.1%20L206.0,197.8%20L205.1,197.7%20L204.2,197.9%20L203.3,198.3%20L200.2,201.8%20L194.9,208.2%20L187.5,217.6%20L177.9,229.9%20L168.4,239.2%20L159.0,245.5%20L149.8,248.6%20L140.7,248.7%20L133.6,248.9%20L128.7,249.1%20L125.9,249.5%20L125.1,249.9%20L124.5,250.5%20L124.0,251.1%20L123.6,251.9%20L123.4,252.7%20L123.4,253.6%20L123.7,254.5%20L124.2,255.4%20L124.9,256.3%20L127.3,257.0%20L131.4,257.5%20L137.1,257.8%20L144.5,257.9%20L149.0,259.4%20L150.5,262.4%20L149.0,266.8%20L144.6,272.7%20L141.2,277.3%20L138.9,280.7%20L137.6,282.8%20L137.4,283.7%20L137.5,284.6%20L137.8,285.5%20L138.4,286.4%20L139.2,287.3%20L140.1,288.0%20L141.0,288.3%20L142.0,288.3%20L143.0,288.1%20L145.2,286.0%20L148.7,282.2%20L153.3,276.5%20L159.2,269.1%20L165.0,263.5%20L170.8,259.8%20L176.5,258.0%20L182.2,258.0%20L183.7,261.7%20L180.9,269.1%20L174.0,280.2%20L162.8,294.9%20L154.3,306.2%20L148.6,314.0%20L145.6,318.2%20L145.4,318.9%20L145.2,319.6%20L145.2,320.4%20L145.4,321.1%20L145.6,321.8%20L146.0,322.4%20L146.4,323.0%20L146.9,323.5%20L147.6,323.9%20L148.2,324.3%20L148.8,324.5%20L149.5,324.6%20L150.2,324.5%20L150.7,324.5%20L151.0,324.5%20L151.2,324.5%20L151.2,324.5%20L151.4,324.3%20L151.8,323.9%20Z'%20fill='%23f7df1e'%20fill-rule='evenodd'/%3e%3c/svg%3e" alt="Firma de Luis.C, creador de HangoutZ"
+            class="h-9 w-auto opacity-90">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/js/inscripcion.js"></script>
+  <script src="src/js/utilidades.js"></script>
+  <script src="src/js/modales.js"></script>
+  <script src="src/js/busqueda.js"></script>
+</body>
+
+</html>
